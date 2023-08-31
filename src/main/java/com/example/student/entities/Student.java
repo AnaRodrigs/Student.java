@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
+@Table(name= "TBL_STUDENT")
 
 @Entity
 public class Student implements Serializable{ 
