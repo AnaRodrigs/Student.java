@@ -18,6 +18,7 @@ public int hashCode() {
     result = prime * result + (int) (id ^ (id >>> 32));
     return result;
 }
+
 @Override
 public boolean equals(Object obj) {
     if (this == obj)
