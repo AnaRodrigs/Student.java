@@ -2,17 +2,22 @@ package com.example.student.entities;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 
-@Table(name= "TBL_STUDENT")
+
 
 @Entity
+@Table(name= "TBL_STUDENT")
 public class Student implements Serializable{ 
 
 @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
 @Override
@@ -36,7 +41,8 @@ public boolean equals(Object obj) {
         return false;
     return true;
 }
-private String name;
+@Column(length = 1024, nullable = false)
+private String names;
 private String course;
 private String email;
 private String endereco;
@@ -50,11 +56,11 @@ public Long getId() {
 public void setId(Long id) {
     this.id = id;
 }
-public String getName() {
-    return name;
+public String getNames() {
+    return names;
 }
-public void setName(String name) {
-    this.name = name;
+public void setNames(String names) {
+    this.names = names;
 }
 public String getCourse() {
     return course;
