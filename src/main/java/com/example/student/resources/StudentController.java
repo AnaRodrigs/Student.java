@@ -1,4 +1,5 @@
-package resources;
+package com.example.student.resources;
+
 
 import java.util.List;
 

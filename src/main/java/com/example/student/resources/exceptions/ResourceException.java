@@ -1,4 +1,6 @@
-package resources.exceptions;
+package com.example.student.resources.exceptions;
+
+
 
 import java.time.Instant;
 

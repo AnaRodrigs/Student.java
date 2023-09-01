@@ -1,4 +1,5 @@
-package resources.exceptions;
+package com.example.student.resources.exceptions;
+
 
 import java.io.Serializable;
 import java.time.Instant;
