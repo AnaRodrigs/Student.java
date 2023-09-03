@@ -34,6 +34,14 @@ public class StudentService {
     }
     
 }
+    public void deleteStudentById(long id) {
+    if (this.repository.existsById(id)) {
+        this.repository.deleteById(id);
+    } else {
+        throw new EntityNotFoundException("Product not found ");
+    }
+
+}
 
 
 }
