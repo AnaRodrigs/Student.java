@@ -26,6 +26,14 @@ public class StudentService {
                                  ()-> new EntityNotFoundException("Student not found")  
                                   );
  }
+    public void deleteProductById(long id) {
+    if (this.repository.existsById(id)) {
+        this.repository.deleteById(id);
+    } else {
+        throw new EntityNotFoundException("Student not found ");
+    }
+    
+}
 
 
 }

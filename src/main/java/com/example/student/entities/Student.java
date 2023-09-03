@@ -43,7 +43,7 @@ public boolean equals(Object obj) {
 }
 @Column(length = 1024, nullable = false)
 private String names;
-private String course;
+private String curso;
 private String email;
 private String endereco;
 private int telefone;
@@ -62,11 +62,11 @@ public String getNames() {
 public void setNames(String names) {
     this.names = names;
 }
-public String getCourse() {
-    return course;
+public String getCurso() {
+    return curso;
 }
-public void setCourse(String course) {
-    this.course = course;
+public void setCurso(String curso) {
+    this.curso = curso ;
 }
 public String getEmail() {
     return email;
