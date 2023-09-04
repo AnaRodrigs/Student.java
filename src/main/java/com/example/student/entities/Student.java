@@ -41,8 +41,11 @@ public boolean equals(Object obj) {
         return false;
     return true;
 }
-@Column(length = 1024, nullable = false)
-private String names;
+@Column(length = 1024, nullable = false, name = "names")
+private String nome;
+
+
+
 private String curso;
 private String email;
 private String endereco;
@@ -56,11 +59,11 @@ public Long getId() {
 public void setId(Long id) {
     this.id = id;
 }
-public String getNames() {
-    return names;
+public String getNome() {
+    return nome;
 }
-public void setNames(String names) {
-    this.names = names;
+public void setNome(String nome) {
+    this.nome = nome;
 }
 public String getCurso() {
     return curso;

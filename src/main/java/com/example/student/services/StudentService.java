@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.student.dtos.StudentRequest;
+import com.example.student.dtos.StudentResponse;
 import com.example.student.entities.Student;
+import com.example.student.mappers.StudentMapper;
 import com.example.student.repositories.StudentRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -26,23 +29,36 @@ public class StudentService {
                                  ()-> new EntityNotFoundException("Student not found")  
                                   );
  }
-    public void deleteProductById(long id) {
-    if (this.repository.existsById(id)) {
-        this.repository.deleteById(id);
-    } else {
-        throw new EntityNotFoundException("Student not found ");
-    }
-    
-}
-    public void deleteStudentById(long id) {
-    if (this.repository.existsById(id)) {
-        this.repository.deleteById(id);
-    } else {
-        throw new EntityNotFoundException("Product not found ");
+
+public void deleteStudentById(long id) {
+        if (this.repository.existsById(id)) {
+            this.repository.deleteById(id);
+        } else {
+            throw new EntityNotFoundException("Student not found ");
+        }
+
     }
 
-}
+    public StudentResponse save(StudentRequest student) {
+        var entity= this.repository.save(StudentMapper.toEntity(student));
+        return StudentMapper.toDTO(entity);
+    }
 
 
-}
 
+    public void update( long id, Student student) {
+        
+    try {
+        var updateStudent= this.repository.getReferenceById(id);
+        updateStudent.setNome(student.getNome());
+        updateStudent.setCurso(student.getCurso());
+        updateStudent.setEndereco(student.getEndereco());
+        updateStudent.setTelefone(student.getTelefone());
+        updateStudent.setEmail(student.getEmail());
+
+        this.repository.save(updateStudent);
+    }
+   catch(EntityNotFoundException e){
+    throw new EntityNotFoundException("Student not found");
+   }
+} }

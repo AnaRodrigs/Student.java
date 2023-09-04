@@ -1,11 +1,12 @@
 package com.example.student.dtos;
 
 public record StudentResponse (
- long id, 
- String names,
+ long id,
+ String nome,
  String curso,
+ String endereco,
  int telefone,
- String enderecoS
+ String email
 )
 {
     
