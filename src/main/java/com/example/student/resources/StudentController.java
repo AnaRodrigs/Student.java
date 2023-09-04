@@ -62,7 +62,6 @@ public class StudentController {
         return ResponseEntity.created(location).body(saveStudent);
     }
 
-
     @PutMapping("{id}")
     public ResponseEntity<Void> update( @RequestBody Student student, 
                                         @PathVariable long id) {
