@@ -12,10 +12,10 @@ public class StudentMapper {
 
 public static Student toEntity(StudentRequest request){
         Student student = new Student();
-        student.setNome(request.nome());
+        student.setName(request.name());
         student.setCurso(request.curso());
-        student.setEndereco(request.endereco());
-        student.setTelefone(request.telefone());
+        student.setAddress(request.address());
+        student.setPhone(request.phone());
         student.setEmail(request.email());
         
         return student;
@@ -24,10 +24,10 @@ public static Student toEntity(StudentRequest request){
 public static StudentResponse toDTO(Student student)
 {
  return new StudentResponse (student.getId(),
-                            student.getNome(),
+                            student.getName(),
                             student.getCurso(),
-                            student.getEndereco(),
-                            student.getTelefone(),
+                            student.getAddress(),
+                            student.getPhone(),
                             student.getEmail()) ;
                          
                         }

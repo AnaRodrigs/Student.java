@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,27 +21,28 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.example.student.dtos.StudentRequest;
 import com.example.student.dtos.StudentResponse;
 import com.example.student.entities.Student;
+import com.example.student.mappers.StudentMapper;
 import com.example.student.services.StudentService;
 
 
 @RestController
 @RequestMapping("students")
+@CrossOrigin
 public class StudentController {
     
     @Autowired
     private StudentService service;
 
     @GetMapping()
-    public ResponseEntity<List<Student>> getStudents(){
+    public ResponseEntity<List<StudentResponse>> getStudents(){
        var students = this.service.getStudents();
-       return ResponseEntity.ok(students);
+       return ResponseEntity.ok(StudentMapper.toDTOList(students));
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Student> getStudent(@PathVariable long id){
+    public ResponseEntity<StudentResponse> getStudent(@PathVariable long id){
         var student = this.service.getStudent(id);
-        return ResponseEntity.ok(student);
-    }
+        return ResponseEntity.ok(StudentMapper.toDTO(student));    }
 
    @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable long id) {

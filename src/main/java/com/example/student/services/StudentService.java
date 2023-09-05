@@ -49,10 +49,10 @@ public void deleteStudentById(long id) {
         
     try {
         var updateStudent= this.repository.getReferenceById(id);
-        updateStudent.setNome(student.getNome());
+        updateStudent.setName(student.getName());
         updateStudent.setCurso(student.getCurso());
-        updateStudent.setEndereco(student.getEndereco());
-        updateStudent.setTelefone(student.getTelefone());
+        updateStudent.setAddress(student.getAddress());
+        updateStudent.setPhone(student.getPhone());
         updateStudent.setEmail(student.getEmail());
 
         this.repository.save(updateStudent);

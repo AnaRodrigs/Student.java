@@ -41,15 +41,15 @@ public boolean equals(Object obj) {
         return false;
     return true;
 }
-@Column(length = 1024, nullable = false, name = "names")
-private String nome;
+@Column(length = 1024, nullable = false, name = "name")
+private String name;
 
 
 
 private String curso;
 private String email;
-private String endereco;
-private int telefone;
+private String address;
+private int phone;
 
 
 
@@ -59,11 +59,11 @@ public Long getId() {
 public void setId(Long id) {
     this.id = id;
 }
-public String getNome() {
-    return nome;
+public String getName() {
+    return name;
 }
-public void setNome(String nome) {
-    this.nome = nome;
+public void setName(String name) {
+    this.name = name;
 }
 public String getCurso() {
     return curso;
@@ -77,17 +77,17 @@ public String getEmail() {
 public void setEmail(String email) {
     this.email = email;
 }
-public String getEndereco() {
-    return endereco;
+public String getAddress() {
+    return address;
 }
-public void setEndereco(String endereco) {
-    this.endereco = endereco;
+public void setAddress(String address) {
+    this.address = address;
 }
-public int getTelefone() {
-    return telefone;
+public int getPhone() {
+    return phone;
 }
-public void setTelefone(int telefone) {
-    this.telefone = telefone;
+public void setPhone(int phone) {
+    this.phone = phone;
 }
 
 }
