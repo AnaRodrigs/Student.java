@@ -13,7 +13,7 @@ public class StudentMapper {
 public static Student toEntity(StudentRequest request){
         Student student = new Student();
         student.setName(request.name());
-        student.setCurso(request.curso());
+        student.setCourse(request.course());
         student.setAddress(request.address());
         student.setPhone(request.phone());
         student.setEmail(request.email());
@@ -25,7 +25,7 @@ public static StudentResponse toDTO(Student student)
 {
  return new StudentResponse (student.getId(),
                             student.getName(),
-                            student.getCurso(),
+                            student.getCourse(),
                             student.getAddress(),
                             student.getPhone(),
                             student.getEmail()) ;

@@ -8,13 +8,13 @@ public record StudentRequest (
     String name,
 
     @NotBlank(message = "Curso não pode ser em branco")
-    String curso,
+    String course,
 
     @NotBlank(message = "Endereço não pode ser em branco")
     String address,
 
     @Min (value = 0, message = "O valor mínimo para o preço é zero")
-    int phone,
+    String phone,
 
      @NotBlank(message = "email não pode ser em branco")
      String email

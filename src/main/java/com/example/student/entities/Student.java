@@ -46,10 +46,10 @@ private String name;
 
 
 
-private String curso;
+private String course;
 private String email;
 private String address;
-private int phone;
+private String phone;
 
 
 
@@ -65,11 +65,11 @@ public String getName() {
 public void setName(String name) {
     this.name = name;
 }
-public String getCurso() {
-    return curso;
+public String getCourse() {
+    return course;
 }
-public void setCurso(String curso) {
-    this.curso = curso ;
+public void setCourse(String course) {
+    this.course = course ;
 }
 public String getEmail() {
     return email;
@@ -83,10 +83,10 @@ public String getAddress() {
 public void setAddress(String address) {
     this.address = address;
 }
-public int getPhone() {
+public String getPhone() {
     return phone;
 }
-public void setPhone(int phone) {
+public void setPhone(String phone) {
     this.phone = phone;
 }
 

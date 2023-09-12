@@ -50,7 +50,7 @@ public void deleteStudentById(long id) {
     try {
         var updateStudent= this.repository.getReferenceById(id);
         updateStudent.setName(student.getName());
-        updateStudent.setCurso(student.getCurso());
+        updateStudent.setCourse(student.getCourse());
         updateStudent.setAddress(student.getAddress());
         updateStudent.setPhone(student.getPhone());
         updateStudent.setEmail(student.getEmail());

@@ -3,9 +3,9 @@ package com.example.student.dtos;
 public record StudentResponse (
  long id,
  String name,
- String curso,
+ String course,
  String address,
- int phone,
+ String phone,
  String email
 )
 {
